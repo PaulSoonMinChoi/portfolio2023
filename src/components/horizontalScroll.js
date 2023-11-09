@@ -42,9 +42,9 @@ const HorizontalScroll = ({children}) => {
 
 
   return (
-    <div className={`relative w-full`} style={{height: `${dynamicHeight}px`}}>
+    <div className="relative w-full" style={{height: `${dynamicHeight}px`}}>
       <div className="sticky h-screen top-0 w-full overflow-x-hidden" ref={containerRef}>
-        <div className={`absolute h-full will-change-transform`} style={{transform: `translateX(${translateX}px)`}} ref={objectRef}>
+        <div className="absolute h-full will-change-transform" style={{transform: `translateX(${translateX}px)`}} ref={objectRef}>
           {children}
         </div>
       </div>
