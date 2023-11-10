@@ -15,7 +15,6 @@ const handleDynamicHeight = (ref, setDynamicHeight) => {
 const applyScrollListener = (ref, setTranslateX) => {
   window.addEventListener("scroll", () => {
     const offsetTop = -ref.current.offsetTop;
-    console.log(ref.current.offsetTop)
     setTranslateX(offsetTop);
   });
 };

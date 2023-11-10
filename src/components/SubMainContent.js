@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../css/image-carosel.css'
 
 // Assets
@@ -12,6 +12,8 @@ import pic7 from '../public/carosel-images/unsplash7.avif'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
+
 
 
 // Import our Components
@@ -20,18 +22,20 @@ import HorizontalScroll from './horizontalScroll'
 
 const SubMainContent = () => {
 
+  const [nav, setNav] = useState('About')
+
+  console.log(nav)
+
   const imgObj = {
     1: pic1,
     2: pic2,
     3: pic3,
     4: pic4,
     5: pic5,
-    6: pic6,
-    7: pic7,
   }
 
   const SampleCards = React.memo(() =>
-  Array(7)
+  Array(5)
     .fill(0)
     .map((_e, i) => 
       <div key={`sampleCard-${i}`} className='project-card relative h-[300px] w-[500px] mr-[70px] shrink-0	bg-slate-500'>
@@ -76,12 +80,10 @@ const waviyStyles = {
   },
 }
 
-
-
   return (
     <div>
       {/* MAKE THIS ANOTHER COMPONENT 1*/}
-      <section className='flex px-[200px] py-[128px]'>
+      <section className='flex px-[300px] py-[128px]'>
         <div className="waviy">
           <span style={waviyStyles[1]}>W</span>
           <span style={waviyStyles[2]}>E</span>
@@ -114,28 +116,73 @@ const waviyStyles = {
         
       </section>
 
-      <section className='flex flex-col px-[400px]'>
-      <div className='flex flex-col'>
-          <span className='info-text text-base leading-6'>
-            My name is Paul Choi, I'm a software engineer / freelancer based in Orange County / Los Angeles, CA, US. 
-            I have developed and worked on many applications in the Esports / Broadcasting solutions platforms.
-          </span>
-          <span className='info-text text-base leading-6'>
-            I'm passionate about intrinsic, cutting-edge interfaces that enhances the user's experience.
-          </span>
+      <section className='info-section flex px-[400px] pb-[200px] min-h-[500px] max-h-[500px]'>
+        <div className='main-text-container h-[300px] w-[760px] relative'>
+          {/* ABOUT TAB */}
+          <div className={`info-text-container flex flex-col justify-center pr-[30px] ${nav === 'About' ? 'showNav' : ''}`}>
+            <span className='info-text text-base leading-6'>
+              My name is Paul Choi, I'm a software engineer / freelancer based in Orange County / Los Angeles, CA, US. 
+              I have developed and worked on many applications in the Esports / Broadcasting solutions platforms.
+            </span>
+            <span className='info-text text-base leading-6'>
+              I'm passionate about intrinsic, cutting-edge interfaces that enhances the user's experience.
+              I'm passionate about intrinsic, cutting-edge interfaces that enhances the user's experience.
+              I'm passionate about intrinsic, cutting-edge interfaces that enhances the user's experience.
+              I'm passionate about intrinsic, cutting-edge interfaces that enhances the user's experience.
+              I'm passionate about intrinsic, cutting-edge interfaces that enhances the user's experience.
+            </span>
+          </div>
+
+          {/* CONTACT TAB */}
+          <div className={`info-text-container flex flex-col justify-center pr-[30px] ${nav === 'Contact' ? 'showNav' : ''}`}>
+            <span className='info-text text-base leading-6'>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </span>
+            <span className='info-text text-base leading-6'>
+              I'm passionate about intrinsic, cutting-edge interfaces that enhances the user's experience.
+              
+            </span>
+          </div>
+
+          {/* FAQ TAB */}
+          <div className={`info-text-container flex flex-col justify-center pr-[30px] ${nav === 'FAQ' ? 'showNav' : ''}`}>
+            <span className='info-text text-base leading-6'>
+              FAQ FAW 
+            </span>
+            <span className='info-text text-base leading-6'>
+              I'm passionate about intrinsic, cutting-edge interfaces that enhances the user's experience.
+              I'm passionate about intrinsic, cutting-edge interfaces that enhances the user's experience.
+              I'm passionate about intrinsic, cutting-edge interfaces that enhances the user's experience.
+              I'm passionate about intrinsic, cutting-edge interfaces that enhances the user's experience.
+              I'm passionate about intrinsic, cutting-edge interfaces that enhances the user's experience.
+            </span>
+          </div>
+
+           {/* BloodBath TAB */}
+           <div className={`info-text-container flex flex-col justify-center pr-[30px] ${nav === 'BloodBath' ? 'showNav' : ''}`}>
+            <span className='info-text text-base leading-6'>
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.
+            </span>
+            <span className='info-text text-base leading-6'>
+              I'm passionate about intrinsic, cutting-edge interfaces that enhances the user's experience.
+              I'm passionate about intrinsic, cutting-edge interfaces that enhances the user's experience.
+            </span>
+          </div>
         </div>
-        <div>
-          <div className="container flex justify-end">
-            <p className="navigation">About</p>
+      
+
+        <div className='navigation-container pr-[50px]'>
+          <div className="flex justify-end">
+            <p className="navigation" onClick={() => setNav('About')}>About</p>
           </div>
-          <div className="container flex justify-end">
-            <p className="navigation">Contact</p>
+          <div className="flex justify-end">
+            <p className="navigation" onClick={() => setNav('Contact')}>Contact</p>
           </div>
-          <div className="container flex justify-end">
-            <p className="navigation">FAQ</p>
+          <div className="flex justify-end">
+            <p className="navigation" onClick={() => setNav('FAQ')}>FAQ</p>
           </div>
-          <div className="container flex justify-end">
-            <p className="navigation">BloodBath</p>
+          <div className="flex justify-end">
+            <p className="navigation" onClick={() => setNav('BloodBath')}>BloodBath</p>
           </div>
 
       
@@ -145,6 +192,11 @@ const waviyStyles = {
 
       {/* MAKE THIS ANOTHER COMPONENT 2*/}
       <section className='relative w-full min-h-screen'>
+        <div className='header-container'>
+          <FontAwesomeIcon className='arrow-down' icon={faArrowDown} />
+          <span className='header'>Experience</span>
+          <FontAwesomeIcon className='arrow-down' icon={faArrowDown} />
+        </div>
         
         <HorizontalScroll >
           <div className='relative h-full pl-[150px] flex justify-start	items-center'>
