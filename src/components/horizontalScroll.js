@@ -36,6 +36,10 @@ const HorizontalScroll = ({children}) => {
   };
 
   useEffect(() => {
+    resizeHandler()
+  }, [translateX])
+
+  useEffect(() => {
     handleDynamicHeight(objectRef, setDynamicHeight);
     window.addEventListener("resize", resizeHandler);
     applyScrollListener(containerRef, setTranslateX);
