@@ -12,13 +12,16 @@ const handleDynamicHeight = (ref, setDynamicHeight) => {
   setDynamicHeight(dynamicHeight);
 };
 
+const scrollCallBack = (ref, setTranslateX) => {
+  const offsetTop = -ref.current.offsetTop;
+  setTranslateX(offsetTop);
+}
+
 const applyScrollListener = (ref, setTranslateX) => {
   window.addEventListener("scroll", () => {
-    const offsetTop = -ref.current.offsetTop;
-    setTranslateX(offsetTop);
+    scrollCallBack(ref, setTranslateX)
   });
 };
-
 
 const HorizontalScroll = ({children}) => {
 
@@ -37,8 +40,6 @@ const HorizontalScroll = ({children}) => {
     window.addEventListener("resize", resizeHandler);
     applyScrollListener(containerRef, setTranslateX);
   }, []);
-
-
 
   return (
     <div className="relative w-full" style={{height: `${dynamicHeight}px`}}>
