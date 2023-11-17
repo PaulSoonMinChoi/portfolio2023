@@ -187,7 +187,7 @@ const SubMainContent = () => {
   return (
     <div>
       {/* MAKE THIS ANOTHER COMPONENT 1*/}
-      <section className="flex px-[300px] py-[128px]">
+      <section className="main-header flex px-[300px] py-[128px]">
         <div className="waviy">
           <span style={waviyStyles[1]}>W</span>
           <span style={waviyStyles[2]}>E</span>
@@ -218,7 +218,7 @@ const SubMainContent = () => {
         </ul>
       </section>
 
-      <section className="info-section flex px-[400px] pb-[200px] min-h-[500px] max-h-[500px]">
+      <section className="info-section flex pb-[200px]">
         <div className="info-section-container flex">
           <div className="main-text-container h-[300px] w-[760px] relative">
             {/* ABOUT TAB */}
