@@ -335,7 +335,7 @@ const SubMainContent = () => {
               </span> */}
               <a
                 className="btn"
-                href="https://drive.google.com/file/d/1mMQBAZBl0QM2-D7IW6e3vz3KP_7GuA0X/view?usp=sharing"
+                href="https://drive.google.com/file/d/1ivNmAVMD87S2to1x0KqjdlajE7QEpk1f/view?usp=sharing"
                 rel="noreferrer"
                 target="_blank">
                 My Resume
