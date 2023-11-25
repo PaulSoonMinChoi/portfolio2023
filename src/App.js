@@ -1,12 +1,12 @@
-import "./App.css";
+import "./css/App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import SubMainContent from "./components/SubMainContent";
+import Landing from "./components/Landing";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" exact element={<SubMainContent />} />
+        <Route path="/" exact element={<Landing />} />
       </Routes>
     </Router>
   );

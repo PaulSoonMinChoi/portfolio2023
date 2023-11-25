@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap");
+
+.waviy {
+  position: relative;
+  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+  font-size: 80px;
+  display: flex;
+}
+.waviy span {
+  font-family: "Montserrat";
+  font-weight: 800;
+  position: relative;
+  display: inline-block;
+  color: #cccccc;
+  text-transform: uppercase;
+  animation: waviy 1s infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes waviy {
+  0%,
+  40%,
+  100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Navigation Icons */
+
+.icon-list {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.icon-list li {
+  list-style: none;
+}
+
+.icon-list li a {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 55px;
+  font-size: 25px;
+  margin: 0 10px;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba(168, 239, 255, 0.3);
+  z-index: 1;
+}
+
+.icon-list li a .icon {
+  position: relative;
+  color: #777777;
+  transition: 0.5s;
+  z-index: 3;
+}
+
+.icon-list li a:hover .icon {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+.icon-list li a:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+.icon-list li a:hover:before {
+  top: 0;
+}
+
+.icon-list li:nth-child(1) a:before {
+  background: #3b5999;
+}
+
+.icon-list li:nth-child(2) a:before {
+  background: #0077b5;
+}
+
+.icon-list li:nth-child(3) a:before {
+  background: #495b77;
+}
+
+/* MEDIA QUERIEST */
+
+@media (max-width: 1200px) {
+  .main-header {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .icon-list {
+    margin-top: 50px;
+    margin-left: unset;
+  }
+}
+
+@media (max-width: 1320px) {
+  .waviy {
+    font-size: 50px;
+  }
+
+  .main-header {
+    padding-bottom: 70px;
+  }
+}
