@@ -78,8 +78,8 @@
 }
 
 .project-sub-photos {
-  width: 1200px;
-  height: 500px;
+  width: 1500px;
+  height: 800px;
   position: absolute;
   z-index: -1;
   top: 0;
@@ -87,8 +87,8 @@
 }
 
 .project-sub-photos-overlay {
-  width: 1200px;
-  height: 500px;
+  width: 1500px;
+  height: 800px;
   z-index: 20;
   position: absolute;
   top: 0;
@@ -98,8 +98,8 @@
 .gallery {
   --g: 6px;
   display: grid;
-  width: 1200px; /* the size */
-  height: 500px;
+  width: 1500px; /* the size */
+  height: 800px;
   grid: auto-flow 1fr / repeat(3, 1fr);
   gap: var(--g);
 }

@@ -119,7 +119,7 @@ const InfoSection = () => {
               </span> */}
             <a
               className="btn"
-              href="https://drive.google.com/file/d/1ivNmAVMD87S2to1x0KqjdlajE7QEpk1f/view?usp=sharing"
+              href="https://drive.google.com/file/d/1FJ7ZWwBTvHGq5zoX_c50aa6IU332GP9I/view?usp=sharing"
               rel="noreferrer"
               target="_blank">
               My Resume

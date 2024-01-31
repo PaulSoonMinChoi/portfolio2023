@@ -94,7 +94,7 @@ const ProjectSection = () => {
             key={`sampleCard-${i}`}
             className={`project-card relative ${
               project === projectNames[i + 1][0]
-                ? "h-[500px] w-[1200px]"
+                ? "h-[800px] w-[1500px]"
                 : "h-[340px] w-[540px]"
             } mr-[70px] shrink-0`}>
             <div
